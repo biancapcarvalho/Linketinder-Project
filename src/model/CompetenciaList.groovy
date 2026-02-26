@@ -26,14 +26,10 @@ class CompetenciaList {
     }
 
     List<Competencia> getCompetencias(List<String> nomes) {
-        nomes.collect { nome ->
-            getCompetencia(nome)
-        } as List<Competencia>
+        nomes.collect { nome -> getCompetencia(nome) }.findAll { it } as List<Competencia>
     }
 
     List<Competencia> getCompetencias(Set<Integer> ids) {
-        ids.collect { id ->
-            getCompetencia(id)
-        } as List<Competencia>
+        ids.collect { id -> getCompetencia(id) }.findAll { it } as List<Competencia>
     }
 }
