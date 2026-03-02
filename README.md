@@ -15,31 +15,36 @@ bianca@bianca-ubuntu-vm:~/IdeaProjects/Linketinder-Project$ groovy --version
 Groovy Version: 5.0.4 JVM: 17.0.18 Vendor: Eclipse Adoptium OS: Linux
 ```
 
-## Sobre a implementação
+E para a implementação dos testes unitários foi utilizado o Spock.
 
-O projeto está em sua implementação básica:
+## Funcionalidades
+
+#### O projeto está em sua implementação básica:
 
 -[x] Candidatos com os atributos Nome, E-mail, CPF, idade, Estado, CEP, descrição e competências
 -[x] 5 candidatos pré-cadastrados
 -[x] Competências pré-definidas: PostgreSQL, Java, Spring, Angular, Groovy, JUnit, JavaScript, TypeScript, Git, Linux e Docker
 -[x] Empresa com os atributos Nome, E-mail Corporativo, CNPJ, País, Estado, CEP e Descrição e competências
 -[x] 5 empresas pré-cadastrados
+-[x] Permitir cadastrar candidatos
 -[x] Menu simples no terminal
   - [x] Listar candidatos
+  - [x] Cadastrar candidatos
   - [x] Listar empresas
   - [x] Sair
    
-E futuramente serão implementados:
+#### E futuramente serão implementados:
 
--[ ] Permitir cadastrar candidatos
 -[ ] Permitir cadastrar empresas
--[ ] Novo menu
-  - [ ] Menu principal (logar, cadastrar, sair)
-  - [ ] Menu de cadastro (cadastrar como empresa ou candidato, voltar e sair)
-  - [ ] Menu de login (logar como empresa ou candidato, voltar e sair)
-    - [ ] Implementar forma de autenticação
-  - [ ] Menu do candidato (ver empresas, curtir empresa, sair)
-  - [ ] Menu da empresa (ver candidatos, curtir candidato, sair)
+-[ ] Vagas
+-[ ] Sistema de match
+
+#### Implementação dos testes
+
+O projeto ZG Hero da trilha de testes unitários pede que seja implementada a funcionalidade de cadastro (de empresaa e de candidato) usando o TDD:
+> --> implementar o teste --> implementar a funcionalidade --> melhorar a funcionalidade
+
+Como eu já havia implementado o cadastro, mas ainda não tinha feito/subido uma release com essa funcionalidade, criei uma branch a partir da main, ou seja, sem a funcionalidade de cadastro, e iniciei o ZG Hero K1-T5 a partir daí, criando o teste e depois a funcionalidade
 
 ## Como executar o projeto via terminal
 1. Clonar este repositório

@@ -1,9 +1,12 @@
-package model
+package repository
 
-class EmpresaList {
+import model.Candidato
+import model.Empresa
+
+class EmpresaRepository {
     List<Empresa> empresas = []
 
-    EmpresaList(CompetenciaList competencias) {
+    EmpresaRepository(CompetenciaRepository competencias) {
         empresas.add(
                 new Empresa(
                         nome: "Tech Inovações S/A",

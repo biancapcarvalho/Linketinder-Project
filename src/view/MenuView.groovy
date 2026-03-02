@@ -8,8 +8,9 @@ class MenuView {
     def exibirMenu() {
         println "\n-------------------- MENU --------------------"
         println "1 - Listar todos os candidatos"
-        println "2 - Listar todas as empresas"
-        println "3 - Sair"
+        println "2 - Cadastrar candidato"
+        println "3 - Listar todas as empresas"
+        println "4 - Sair"
         print "> Escolha uma opção: "
     }
 }
