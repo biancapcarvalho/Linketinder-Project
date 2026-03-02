@@ -35,6 +35,10 @@ class AppController {
                     empresaController.listarEmpresas()
                     break
                 case 4:
+                    def empresa = empresaController.buscarDadosEmpresa()
+                    empresaController.exibirNovaEmpresa(empresa)
+                    break
+                case 5:
                     executando = false
                     break
                 default:

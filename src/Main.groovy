@@ -18,7 +18,7 @@ class Main {
 
         EmpresaRepository empresaList = new EmpresaRepository(competenciaList)
         EmpresaView empresaView = new EmpresaView()
-        EmpresaController empresaController = new EmpresaController(list: empresaList, view: empresaView)
+        EmpresaController empresaController = new EmpresaController(empresaList, empresaView)
 
         MenuView menuView = new MenuView()
         AppController app = new AppController(view: menuView, candidatoController: candidatoController, empresaController: empresaController)

@@ -1,6 +1,5 @@
 package repository
 
-import model.Candidato
 import model.Empresa
 
 class EmpresaRepository {
@@ -67,5 +66,9 @@ class EmpresaRepository {
                         competencias: competencias.getCompetencias(["Groovy", "JUnit", "Java"])
                 )
         )
+    }
+
+    void addEmpresa(Empresa empresa) {
+        empresas.add(empresa)
     }
 }
