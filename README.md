@@ -27,15 +27,16 @@ E para a implementação dos testes unitários foi utilizado o Spock.
 -[x] Empresa com os atributos Nome, E-mail Corporativo, CNPJ, País, Estado, CEP e Descrição e competências
 -[x] 5 empresas pré-cadastrados
 -[x] Permitir cadastrar candidatos
+-[x] Permitir cadastrar empresas
 -[x] Menu simples no terminal
   - [x] Listar candidatos
   - [x] Cadastrar candidatos
   - [x] Listar empresas
+  - [x] Cadastrar empresas
   - [x] Sair
    
 #### E futuramente serão implementados:
 
--[ ] Permitir cadastrar empresas
 -[ ] Vagas
 -[ ] Sistema de match
 
