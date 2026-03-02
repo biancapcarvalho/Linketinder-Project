@@ -1,24 +1,24 @@
 import controller.AppController
 import controller.CandidatoController
 import controller.EmpresaController
-import model.CandidatoList
-import model.CompetenciaList
-import model.EmpresaList
+import repository.CandidatoRepository
+import repository.CompetenciaRepository
+import repository.EmpresaRepository
 import view.CandidatoView
 import view.EmpresaView
 import view.MenuView
 
 class Main {
     static void main(String[] args) {
-        CompetenciaList competenciaList = new CompetenciaList()
+        CompetenciaRepository competenciaList = new CompetenciaRepository()
 
-        CandidatoList candidatoList = new CandidatoList(competenciaList)
+        CandidatoRepository candidatoList = new CandidatoRepository(competenciaList)
         CandidatoView candidatoView = new CandidatoView()
-        CandidatoController candidatoController = new CandidatoController(list: candidatoList, view: candidatoView)
+        CandidatoController candidatoController = new CandidatoController(candidatoList, candidatoView)
 
-        EmpresaList empresaList = new EmpresaList(competenciaList)
+        EmpresaRepository empresaList = new EmpresaRepository(competenciaList)
         EmpresaView empresaView = new EmpresaView()
-        EmpresaController empresaController = new EmpresaController(list: empresaList, view: empresaView)
+        EmpresaController empresaController = new EmpresaController(empresaList, empresaView)
 
         MenuView menuView = new MenuView()
         AppController app = new AppController(view: menuView, candidatoController: candidatoController, empresaController: empresaController)

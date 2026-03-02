@@ -1,9 +1,11 @@
-package model
+package repository
 
-class CompetenciaList {
+import model.Competencia
+
+class CompetenciaRepository {
     ArrayList<Competencia> competencias = []
 
-    CompetenciaList() {
+    CompetenciaRepository() {
         competencias.add(new Competencia(id: 1, nome: "PostgreSQL"))
         competencias.add(new Competencia(id: 2, nome: "Java"))
         competencias.add(new Competencia(id: 3, nome: "Spring"))
@@ -26,14 +28,10 @@ class CompetenciaList {
     }
 
     List<Competencia> getCompetencias(List<String> nomes) {
-        nomes.collect { nome ->
-            getCompetencia(nome)
-        } as List<Competencia>
+        nomes.collect { nome -> getCompetencia(nome) }.findAll { it } as List<Competencia>
     }
 
     List<Competencia> getCompetencias(Set<Integer> ids) {
-        ids.collect { id ->
-            getCompetencia(id)
-        } as List<Competencia>
+        ids.collect { id -> getCompetencia(id) }.findAll { it } as List<Competencia>
     }
 }

@@ -1,9 +1,11 @@
-package model
+package repository
 
-class CandidatoList {
+import model.Candidato
+
+class CandidatoRepository {
     List<Candidato> candidatos = []
 
-    CandidatoList(CompetenciaList competencias) {
+    CandidatoRepository(CompetenciaRepository competencias) {
         candidatos.add(
                 new Candidato(
                         nome: "Bianca Carvalho",
@@ -64,5 +66,9 @@ class CandidatoList {
                         competencias: competencias.getCompetencias(["Angular", "TypeScript"])
                 )
         )
+    }
+
+    void addCandidato(Candidato candidato) {
+        candidatos.add(candidato)
     }
 }
