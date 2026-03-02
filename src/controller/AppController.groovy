@@ -28,14 +28,14 @@ class AppController {
                     candidatoController.listarCandidatos()
                     break
                 case 2:
-                    def candidato = candidatoController.criarCandidato()
+                    def candidato = candidatoController.buscarDadosCandidato()
                     candidatoController.exibirNovoCandidato(candidato)
                     break
                 case 3:
                     empresaController.listarEmpresas()
                     break
                 case 4:
-                    def empresa = empresaController.criarEmpresa()
+                    def empresa = empresaController.buscarDadosEmpresa()
                     empresaController.exibirNovaEmpresa(empresa)
                     break
                 case 5:

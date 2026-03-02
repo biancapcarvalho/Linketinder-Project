@@ -1,9 +1,11 @@
-package model
+package repository
 
-class EmpresaList {
+import model.Empresa
+
+class EmpresaRepository {
     List<Empresa> empresas = []
 
-    EmpresaList(CompetenciaList competencias) {
+    EmpresaRepository(CompetenciaRepository competencias) {
         empresas.add(
                 new Empresa(
                         nome: "Tech Inovações S/A",
@@ -64,5 +66,9 @@ class EmpresaList {
                         competencias: competencias.getCompetencias(["Groovy", "JUnit", "Java"])
                 )
         )
+    }
+
+    void addEmpresa(Empresa empresa) {
+        empresas.add(empresa)
     }
 }

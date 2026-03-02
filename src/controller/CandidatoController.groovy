@@ -1,19 +1,28 @@
 package controller
 
 import model.Candidato
-import model.CandidatoList
-import model.CompetenciaList
+import repository.CandidatoRepository
+import repository.CompetenciaRepository
 import view.CandidatoView
 
 class CandidatoController {
     CandidatoView view
-    CandidatoList list
+    CandidatoRepository list
+
+    CandidatoController(CandidatoRepository listaDeCandidatos) {
+        list = listaDeCandidatos
+    }
+
+    CandidatoController(CandidatoRepository listaDeCandidatos, CandidatoView  candidatoView) {
+        list = listaDeCandidatos
+        view = candidatoView
+    }
 
     void listarCandidatos() {
         view.exibirListaDeCandidatos(list.candidatos)
     }
 
-    def criarCandidato() {
+    def buscarDadosCandidato() {
         def input = view.criarCandidato()
         Candidato candidato = new Candidato()
         candidato.nome = input.nome
@@ -23,9 +32,9 @@ class CandidatoController {
         candidato.estado = input.estado
         candidato.cep = input.cep
         candidato.descricao = input.descricao
-        candidato.competencias = (new CompetenciaList()).getCompetencias(input.competencias) // isso funciona enquanto é fixa a lista de competencias
+        candidato.competencias = (new CompetenciaRepository()).getCompetencias(input.competencias) // isso funciona enquanto é fixa a lista de competencias
 
-        list.candidatos.add(candidato)
+        cadastrarCandidato(candidato)
 
         return candidato
     }
@@ -33,5 +42,30 @@ class CandidatoController {
     void exibirNovoCandidato(Candidato candidato) {
         println "\n----------- CANDIDATO CRIADO COM SUCESSO -----------"
         view.exibirCandidato(candidato)
+    }
+
+    void cadastrarCandidato(Candidato novoCandidato) {
+        if (novoCandidato.nome == null || novoCandidato.nome.trim().isEmpty()) {
+            println "Erro: o nome é obrigatório"
+            return
+        }
+
+        if (novoCandidato.email == null || novoCandidato.email.trim().isEmpty()) {
+            println "Erro: o email é obrigatório"
+            return
+        } else if (!novoCandidato.email.contains("@")) {
+            println "Erro: email inválido"
+            return
+        }
+
+        if (novoCandidato.cpf == null || novoCandidato.cpf.trim().isEmpty()) {
+            println "Erro: o cpf é obrigatório"
+            return
+        } else if (novoCandidato.cpf.size() != 11) {
+            println "Erro: cpf inválido"
+            return
+        }
+
+        list.addCandidato(novoCandidato)
     }
 }

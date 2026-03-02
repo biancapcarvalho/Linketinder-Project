@@ -1,9 +1,11 @@
-package model
+package repository
 
-class CompetenciaList {
+import model.Competencia
+
+class CompetenciaRepository {
     ArrayList<Competencia> competencias = []
 
-    CompetenciaList() {
+    CompetenciaRepository() {
         competencias.add(new Competencia(id: 1, nome: "PostgreSQL"))
         competencias.add(new Competencia(id: 2, nome: "Java"))
         competencias.add(new Competencia(id: 3, nome: "Spring"))

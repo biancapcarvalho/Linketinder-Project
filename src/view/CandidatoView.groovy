@@ -29,7 +29,6 @@ class CandidatoView extends PessoaView {
         competencias.each { print "$it.nome "}
     }
 
-
     def criarCandidato() {
         Scanner scanner = new Scanner(System.in)
 

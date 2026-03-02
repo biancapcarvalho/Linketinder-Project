@@ -1,7 +1,7 @@
 package view
 
 import model.Competencia
-import model.CompetenciaList
+import repository.CompetenciaRepository
 
 abstract class PessoaView {
 
@@ -97,7 +97,7 @@ abstract class PessoaView {
 
     Set<Integer> getInputCompetencias(Scanner scanner) {
         println("Informe suas competências:")
-        CompetenciaList list = new CompetenciaList()
+        CompetenciaRepository list = new CompetenciaRepository()
         list.competencias.each { c ->
             println "$c.id - $c.nome"
         }
@@ -106,7 +106,7 @@ abstract class PessoaView {
 
         Set<Integer> idsCompetencias = input.split(",").findResults {
             it.trim().isInteger() ? (it.trim() as Integer) : null
-        } as Set // [1,2,3,4,50,null]
+        } as Set
 
         idsCompetencias
     }
